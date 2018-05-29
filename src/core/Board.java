@@ -552,7 +552,7 @@ public class Board {
     }
 
     /**
-     * @param blackCount the darkCount to set
+     * @param blackCount
      */
     public void setBlackCount(int blackCount) {
         this.blackCount = blackCount;
@@ -566,7 +566,7 @@ public class Board {
     }
 
     /**
-     * @param whiteCount the lightCount to set
+     * @param whiteCount
      */
     public void setWhiteCount(int whiteCount) {
         this.whiteCount = whiteCount;
@@ -580,7 +580,7 @@ public class Board {
     }
 
     /**
-     * @param players the players to set
+     * @param players
      */
     public void setPlayers(ArrayList<Player> players) {
         this.players = players;

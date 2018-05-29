@@ -124,7 +124,6 @@ public class BoardUi extends JPanel {
             if(color == Constants.EMPTY){
                 isValid = false;
             }
-            //calls the isValidMove
             if(game.getBoard().isValidMove(row, col, color, Constants.CHECK_NO)){
                 isValid = true;
             }

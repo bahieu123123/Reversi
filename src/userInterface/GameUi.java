@@ -120,7 +120,7 @@ public class GameUi extends JPanel{
     }
 
     /**
-     * @param score2 the score2 to set
+     * @param score2
      */
     public void setScore2(JLabel score2) {
         this.score2 = score2;

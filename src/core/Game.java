@@ -41,7 +41,7 @@ public class Game {
     }
 
     /**
-     * @param board the board to set
+     * @param board
      */
     public void setBoard(Board board) {
         this.board = board;
