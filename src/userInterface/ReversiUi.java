@@ -19,17 +19,17 @@ public class ReversiUi extends JFrame {
     private void initComponents(){
         
         // создает кадр и устанавливает его размеры
-        this.setPreferredSize(new Dimension(600, 600));
-        this.setMinimumSize(new Dimension(600,600));
+        this.setPreferredSize(new Dimension(500, 500));
+        this.setMinimumSize(new Dimension(500,500));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //создает два экземпляра классов gameUi и BoardUi
         gameUi = new GameUi(game);
         boardUi = new BoardUi(game, gameUi);
-        
+
         //добавляет объекты в фактический кадр
         this.add(boardUi, BorderLayout.CENTER);
         this.add(gameUi, BorderLayout.NORTH);
-        
+
         //делает реальную рамку видимой
         this.setVisible(true);
         

@@ -7,14 +7,14 @@ public class Disc {
     private Color disColoration;
 
     /**
-     * @return обесцвечивание
+     * @return disColoration
      */
     public Color getDisColoration() {
         return disColoration;
     }
 
     /**
-     * @param disColoration обесцвечивание
+     * @param disColoration
      */
     public void setDisColoration(Color disColoration) {
         this.disColoration = disColoration;

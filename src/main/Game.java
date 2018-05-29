@@ -25,28 +25,12 @@ public class Game {
     public ArrayList<Player> getPlayers() {
         return players;
     }
-
-    /**
-     * @param players игрокам установить
-     */
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
-    }
-
     /**
      * @return the board
      */
     public Board getBoard() {
         return board;
     }
-
-    /**
-     * @param board
-     */
-    public void setBoard(Board board) {
-        this.board = board;
-    }
-    
     public void initObjects(){
         //создает экземпляр переменной
         board = new Board(this);

@@ -142,7 +142,7 @@ public class BoardUi extends JPanel {
         private ImageIcon imageResize(ImageIcon icon){
             
             Image image = icon.getImage();
-            Image newImage = image.getScaledInstance(80, 80, java.awt.Image.SCALE_SMOOTH);
+            Image newImage = image.getScaledInstance(80, 80, Image.SCALE_FAST);
             icon = new ImageIcon(newImage);
             return icon;
         }

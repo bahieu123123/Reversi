@@ -550,33 +550,11 @@ public class Board {
     public int getBlackCount() {
         return blackCount;
     }
-
-    /**
-     * @param blackCount
-     */
-    public void setBlackCount(int blackCount) {
-        this.blackCount = blackCount;
-    }
-
     /**
      * @return the whiteCount
      */
     public int getWhiteCount() {
         return whiteCount;
-    }
-
-    /**
-     * @param whiteCount
-     */
-    public void setWhiteCount(int whiteCount) {
-        this.whiteCount = whiteCount;
-    }
-
-    /**
-     * @return the players
-     */
-    public ArrayList<Player> getPlayers() {
-        return players;
     }
 
     /**
