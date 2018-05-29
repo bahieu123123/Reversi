@@ -11,7 +11,7 @@ public class Reversi {
     public static void main(String[] args) {
         //создает новый игровой объект
         Game game = new Game();
-        ReversiUi othello = new ReversiUi(game);
+        ReversiUi Reversi = new ReversiUi(game);
     }
 
 }
