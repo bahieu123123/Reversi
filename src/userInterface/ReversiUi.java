@@ -1,6 +1,6 @@
 package userInterface;
 
-import core.Game;
+import main.Game;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.JFrame;

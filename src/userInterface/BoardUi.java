@@ -1,8 +1,8 @@
 package userInterface;
 
-import core.Constants;
-import core.Disc;
-import core.Game;
+import main.Constants;
+import main.Disc;
+import main.Game;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;

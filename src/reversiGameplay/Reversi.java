@@ -1,6 +1,6 @@
-package reversi;
+package reversiGameplay;
 
-import core.Game;
+import main.Game;
 import userInterface.ReversiUi;
 
 public class Reversi {
