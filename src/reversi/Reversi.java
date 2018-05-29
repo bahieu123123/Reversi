@@ -1,4 +1,4 @@
-package othello;
+package reversi;
 
 import core.Game;
 import userInterface.ReversiUi;
