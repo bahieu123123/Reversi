@@ -47,10 +47,10 @@ public class Board {
         }
         
         //устанавливает начальное состояние платы
-        board[3][3].setDiscolor(Constants.LIGHT);
-        board[3][4].setDiscolor(Constants.DARK);
-        board[4][3].setDiscolor(Constants.DARK);
-        board[4][4].setDiscolor(Constants.LIGHT);
+        board[3][3].setDisColoration(Constants.LIGHT);
+        board[3][4].setDisColoration(Constants.DARK);
+        board[4][3].setDisColoration(Constants.DARK);
+        board[4][4].setDisColoration(Constants.LIGHT);
         
     }
 
@@ -61,11 +61,11 @@ public class Board {
         for(k=0; k<Constants.ROWS; k++){
             for(l=0; l<Constants.COLUMNS; l++){
                 //проверяет цвет текущей плитки и соответственно увеличивает счетную переменную
-                if(board[k][l].getDiscolor() == Constants.DARK){
+                if(board[k][l].getDisColoration() == Constants.DARK){
                     blackCount++;
                 }
                 //если текущая плитка не темная, приращение whiteCount
-                else if(board[k][l].getDiscolor() == Constants.LIGHT){
+                else if(board[k][l].getDisColoration() == Constants.LIGHT){
                     whiteCount++;
                 }
             }
@@ -83,7 +83,7 @@ public class Board {
         boolean result = false;
         
        //если в этом месте уже есть цвет, вы не можете играть здесь.
-        if(board[row][col].getDiscolor() != Constants.EMPTY && check == Constants.CHECK_NO){
+        if(board[row][col].getDisColoration() != Constants.EMPTY && check == Constants.CHECK_NO){
             gameOver();
             return result;
         }
@@ -117,7 +117,7 @@ public class Board {
         
         //если ход правильный, обновите пространство в настоящее время, чтобы иметь цвет игрока
         if(result == true && check == Constants.CHECK_NO)
-            board[row][col].setDiscolor(color);
+            board[row][col].setDisColoration(color);
         
         //обновляет текущий счет
         calculateScore();
@@ -153,12 +153,12 @@ public class Board {
         
         while(checkRow >= 0 && sameColor == false){
             //проверяет, равен ли текущий цвет квадрата
-            if(board[checkRow][col].getDiscolor() == Constants.EMPTY){
+            if(board[checkRow][col].getDisColoration() == Constants.EMPTY){
                 isValid = false;
                 emptySpace = true;
             }
             //если текущий цвет плитки не совпадает с пройденным цветом, увеличьте переменную squaresFlipped
-            else if(board[checkRow][col].getDiscolor() != color){
+            else if(board[checkRow][col].getDisColoration() != color){
                 squaresFlipped++;
             }
             else{
@@ -176,7 +176,7 @@ public class Board {
             do{
                 row--;
                 squaresFlipped--;
-                board[row][col].setDiscolor(color);
+                board[row][col].setDisColoration(color);
             }while(squaresFlipped > 0);
             isValid = true;
         }
@@ -197,12 +197,12 @@ public class Board {
      
         while(checkRow >= 0 && checkCol >= 0 && sameColor == false){
             //проверяет, равен ли текущий цвет квадрата
-            if(board[checkRow][checkCol].getDiscolor() == Constants.EMPTY){
+            if(board[checkRow][checkCol].getDisColoration() == Constants.EMPTY){
                 isValid = false;
                 emptySpace = true;
             }
             //если текущий цвет плитки не совпадает с пройденным цветом, увеличьте переменную squaresFlipped
-            else if(board[checkRow][checkCol].getDiscolor() != color){
+            else if(board[checkRow][checkCol].getDisColoration() != color){
                 squaresFlipped++;
             }
             else{
@@ -222,7 +222,7 @@ public class Board {
                 row--;
                 col--;
                 squaresFlipped--;
-                board[row][col].setDiscolor(color);
+                board[row][col].setDisColoration(color);
             }while(squaresFlipped > 0);
             isValid = true;
         }
@@ -242,12 +242,12 @@ public class Board {
         
         while(checkCol >= 0 && sameColor == false){
             //проверяет, равен ли текущий цвет квадрата
-            if(board[row][checkCol].getDiscolor() == Constants.EMPTY){
+            if(board[row][checkCol].getDisColoration() == Constants.EMPTY){
                 isValid = false;
                 emptySpace = true;
             }
             //если текущий цвет плитки не совпадает с пройденным цветом, увеличьте переменную squaresFlipped
-            else if(board[row][checkCol].getDiscolor() != color){
+            else if(board[row][checkCol].getDisColoration() != color){
                 squaresFlipped++;
             }
             else{
@@ -265,7 +265,7 @@ public class Board {
             do{
                 col--;
                 squaresFlipped--;
-                board[row][col].setDiscolor(color);
+                board[row][col].setDisColoration(color);
                 
             }while(squaresFlipped > 0);
             isValid = true;
@@ -287,12 +287,12 @@ public class Board {
         
         while(checkRow <= 7 && checkCol >=0 && sameColor == false){
             //проверяет, равен ли текущий цвет квадрата
-            if(board[checkRow][checkCol].getDiscolor() == Constants.EMPTY){
+            if(board[checkRow][checkCol].getDisColoration() == Constants.EMPTY){
                 isValid = false;
                 emptySpace = true;
             }
             //если текущий цвет плитки не совпадает с пройденным цветом, увеличьте переменную squaresFlipped
-            else if(board[checkRow][checkCol].getDiscolor() != color){
+            else if(board[checkRow][checkCol].getDisColoration() != color){
                 squaresFlipped++;
             }
             else{
@@ -310,7 +310,7 @@ public class Board {
                 row++;
                 col--;
                 squaresFlipped--;
-                board[row][col].setDiscolor(color);
+                board[row][col].setDisColoration(color);
             }while(squaresFlipped > 0);
             isValid = true;
         }
@@ -330,12 +330,12 @@ public class Board {
         
         while(checkRow <= 7 && sameColor == false){
             //проверяет, равен ли текущий цвет квадрата
-            if(board[checkRow][col].getDiscolor() == Constants.EMPTY){
+            if(board[checkRow][col].getDisColoration() == Constants.EMPTY){
                 isValid = false;
                 emptySpace = true;
             }
             //если текущий цвет плитки не совпадает с пройденным цветом, увеличьте переменную squaresFlipped
-            else if(board[checkRow][col].getDiscolor() != color){
+            else if(board[checkRow][col].getDisColoration() != color){
                 squaresFlipped++;
             }
             else{
@@ -351,7 +351,7 @@ public class Board {
             do{
                 row++;
                 squaresFlipped--;
-                board[row][col].setDiscolor(color);
+                board[row][col].setDisColoration(color);
             }while(squaresFlipped > 0);
             isValid = true;
         }
@@ -372,12 +372,12 @@ public class Board {
         
         while(checkRow <= 7 && checkCol <= 7 && sameColor == false){
             //проверяет, равен ли текущий цвет квадрата
-            if(board[checkRow][checkCol].getDiscolor() == Constants.EMPTY){
+            if(board[checkRow][checkCol].getDisColoration() == Constants.EMPTY){
                 isValid = false;
                 emptySpace = true;
             }
             //если текущий цвет плитки не совпадает с пройденным цветом, увеличьте переменную squaresFlipped
-            else if(board[checkRow][checkCol].getDiscolor() != color){
+            else if(board[checkRow][checkCol].getDisColoration() != color){
                 squaresFlipped++;
             }
             else{
@@ -395,7 +395,7 @@ public class Board {
                 row++;
                 col++;
                 squaresFlipped--;
-                board[row][col].setDiscolor(color);
+                board[row][col].setDisColoration(color);
             }while(squaresFlipped > 0);
             isValid = true;
         }
@@ -415,12 +415,12 @@ public class Board {
         
         while(checkCol <= 7 && sameColor == false){
             //проверяет, равен ли текущий цвет квадрата
-            if(board[row][checkCol].getDiscolor() == Constants.EMPTY){
+            if(board[row][checkCol].getDisColoration() == Constants.EMPTY){
                 isValid = false;
                 emptySpace = true;
             }
             //если текущий цвет плитки не совпадает с пройденным цветом, увеличьте переменную squaresFlipped
-            else if(board[row][checkCol].getDiscolor() != color){
+            else if(board[row][checkCol].getDisColoration() != color){
                 squaresFlipped++;
             }
             else{
@@ -436,7 +436,7 @@ public class Board {
             do{
                 col++;
                 squaresFlipped--;
-                board[row][col].setDiscolor(color);
+                board[row][col].setDisColoration(color);
             }while(squaresFlipped > 0);
             isValid = true;
         }
@@ -457,12 +457,12 @@ public class Board {
         
         while(checkRow >= 0 && checkCol <= 7 && sameColor == false){
             //проверяет, равен ли текущий цвет квадрата
-            if(board[checkRow][checkCol].getDiscolor() == Constants.EMPTY){
+            if(board[checkRow][checkCol].getDisColoration() == Constants.EMPTY){
                 isValid = false;
                 emptySpace = true;
             }
             //если текущий цвет плитки не совпадает с пройденным цветом, увеличьте переменную squaresFlipped
-            else if(board[checkRow][checkCol].getDiscolor() != color){
+            else if(board[checkRow][checkCol].getDisColoration() != color){
                 squaresFlipped++;
             }
             else{
@@ -480,7 +480,7 @@ public class Board {
                 row--;
                 col++;
                 squaresFlipped--;
-                board[row][col].setDiscolor(color);
+                board[row][col].setDisColoration(color);
             }while(squaresFlipped > 0);
             isValid = true;
         }
@@ -500,7 +500,7 @@ public class Board {
         for(a=0; a<Constants.ROWS; a++){
             for(b=0; b<Constants.COLUMNS; b++){
                 //если есть еще доступные места для воспроизведения диска, игра будет продолжена
-                if(board[a][b].getDiscolor() == Constants.EMPTY){
+                if(board[a][b].getDisColoration() == Constants.EMPTY){
                     if(isValidMove(a, b, currentColor, Constants.CHECK_YES)){
                         return false;
                     }
@@ -518,7 +518,7 @@ public class Board {
         for(a=0; a<Constants.ROWS; a++){
             for(b=0; b<Constants.COLUMNS; b++){
                 //если есть еще доступные места для воспроизведения диска, игра будет продолжена
-                if(board[a][b].getDiscolor() == Constants.EMPTY){
+                if(board[a][b].getDisColoration() == Constants.EMPTY){
                     if(isValidMove(a, b, currentColor, Constants.CHECK_YES)){
                         //игра еще не закончена, поэтому теперь мы позволяем другому игроку двигаться
                         return false;

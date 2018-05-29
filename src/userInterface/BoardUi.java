@@ -100,12 +100,12 @@ public class BoardUi extends JPanel {
             for(j=0; j<Constants.ROWS; j++){
                 for(k=0; k<Constants.COLUMNS; k++){
                     //проверяет цвет кнопки
-                    if(discs[j][k].getDiscolor() == Constants.DARK){
+                    if(discs[j][k].getDisColoration() == Constants.DARK){
                         disc = new ImageIcon(getClass().getResource("/images/blackDisc.png"));
                         disc = imageResize(disc);
                         board[j][k].setIcon(disc);
                     }
-                    else if(discs[j][k].getDiscolor() == Constants.LIGHT){
+                    else if(discs[j][k].getDisColoration() == Constants.LIGHT){
                         disc = new ImageIcon(getClass().getResource("/images/whiteDisc.png"));
                         disc = imageResize(disc);
                         board[j][k].setIcon(disc);

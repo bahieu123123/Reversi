@@ -4,19 +4,19 @@ import java.awt.Color;
 
 public class Disc {
     //создает переменную типа Color
-    private Color discolor;
+    private Color disColoration;
 
     /**
      * @return обесцвечивание
      */
-    public Color getDiscolor() {
-        return discolor;
+    public Color getDisColoration() {
+        return disColoration;
     }
 
     /**
-     * @param discolor обесцвечивание
+     * @param disColoration обесцвечивание
      */
-    public void setDiscolor(Color discolor) {
-        this.discolor = discolor;
+    public void setDisColoration(Color disColoration) {
+        this.disColoration = disColoration;
     }
 }
