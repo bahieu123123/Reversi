@@ -23,11 +23,11 @@ public class BoardUi extends JPanel {
     public BoardUi(Game game, GameUi gameUi){
         this.game = game;
         this.gameUi = gameUi;
-        initComponents();
+        unitComponents();
         listener.updateUi();
     }
     
-    private void initComponents(){
+    private void unitComponents(){
         
         //создает размер по умолчанию BoardUi
         this.setPreferredSize(new Dimension(800, 300));
@@ -67,13 +67,13 @@ public class BoardUi extends JPanel {
     private class BoardListener implements ActionListener{
 
         @Override
-        public void actionPerformed(ActionEvent ae) {
+        public void actionPerformed(ActionEvent e) {
             
             //если нажата кнопка, нажмите кнопку, затем выполните этот код
           
-            if(ae.getSource() instanceof JButton){
+            if(e.getSource() instanceof JButton){
                 //захватывает местоположение выбранной кнопки
-                JButton button = (JButton) ae.getSource();
+                JButton button = (JButton) e.getSource();
                 int row = (int)button.getClientProperty("row");
                 int col = (int)button.getClientProperty("col");
                 
@@ -85,7 +85,6 @@ public class BoardUi extends JPanel {
                 else{
                     JOptionPane.showMessageDialog(button, "Move is not valid, select another.");
                 }
-                
             }
         }
         

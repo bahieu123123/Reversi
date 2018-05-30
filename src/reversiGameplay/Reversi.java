@@ -14,4 +14,5 @@ public class Reversi {
         ReversiUi Reversi = new ReversiUi(game);
     }
 
+
 }

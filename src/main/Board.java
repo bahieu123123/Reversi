@@ -1,5 +1,7 @@
 package main;
 
+import userInterface.ReversiUi;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -127,17 +129,20 @@ public class Board {
             //если игрок набрал больше очков, показать, что они выиграли
             if(players.get(Constants.PLAYER_1).getScore() > players.get(Constants.PLAYER_2).getScore()){
                 JOptionPane.showMessageDialog(null, players.get(Constants.PLAYER_1).getName() + " wins!");
-                System.exit(0);
+                Game game = new Game();
+                ReversiUi Reversi = new ReversiUi(game);
             }
             //если игрок два набрал выше, показать, что они вместо этого выиграли
             else if(players.get(Constants.PLAYER_2).getScore() > players.get(Constants.PLAYER_1).getScore()){
                 JOptionPane.showMessageDialog(null, players.get(Constants.PLAYER_2).getName() + " wins!");
-                System.exit(0);
+                Game game = new Game();
+                ReversiUi Reversi = new ReversiUi(game);
             }
             //если игрок равен точке
             else{
                 JOptionPane.showMessageDialog(null, "Both players tied with the same number of disks!");
-                System.exit(0);
+                Game game = new Game();
+                ReversiUi Reversi = new ReversiUi(game);
             }
         }
         return result;
@@ -529,7 +534,6 @@ public class Board {
         
         //если мы достигнем этого момента, игра закончится, и мы должны объявить об этом
         JOptionPane.showMessageDialog(null, "No more possible moves for either player. Game over.");
-        
         //игра заканчивается, если метод достигает этого утверждения.
         return gameOver;
     }

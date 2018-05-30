@@ -75,14 +75,6 @@ public class GameUi extends JPanel{
         
         
     }
-
-    /**
-     * @return the game
-     */
-    public Game getGame() {
-        return game;
-    }
-
     /**
      * @param game
      */
