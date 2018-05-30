@@ -128,13 +128,14 @@ public class Board {
         if(check == Constants.CHECK_NO && gameOver() == true){
             //если игрок набрал больше очков, показать, что они выиграли
             if(players.get(Constants.PLAYER_1).getScore() > players.get(Constants.PLAYER_2).getScore()){
-                JOptionPane.showMessageDialog(null, players.get(Constants.PLAYER_1).getName() + " wins!");
+                JOptionPane.showMessageDialog(null, players.get(Constants.PLAYER_1).getName() +
+                        " Black"+ " wins!");
                 Game game = new Game();
                 ReversiUi Reversi = new ReversiUi(game);
             }
             //если игрок два набрал выше, показать, что они вместо этого выиграли
             else if(players.get(Constants.PLAYER_2).getScore() > players.get(Constants.PLAYER_1).getScore()){
-                JOptionPane.showMessageDialog(null, players.get(Constants.PLAYER_2).getName() + " wins!");
+                JOptionPane.showMessageDialog(null, players.get(Constants.PLAYER_2).getName() + " White" +" wins!");
                 Game game = new Game();
                 ReversiUi Reversi = new ReversiUi(game);
             }
@@ -500,6 +501,9 @@ public class Board {
         int a, b;
         boolean gameOver= true;
         Color currentColor = game.getCurrentPlayer().getDiscColor();
+        if((players.get(Constants.PLAYER_1).getScore()+(players.get(Constants.PLAYER_2).getScore())==64)){
+            return true;
+        }
       
         //проверяет, заполнены ли все плитки
         if((players.get(Constants.PLAYER_1).getScore()+(players.get(Constants.PLAYER_2).getScore())<=64)
