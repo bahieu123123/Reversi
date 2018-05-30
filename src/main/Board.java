@@ -16,7 +16,7 @@ public class Board {
     public Board(Game game){
         this.game = game;
         //конструктор для классной доски
-        initObjects();
+        unitObjects();
     }
 
     /**
@@ -28,13 +28,13 @@ public class Board {
 
     /**Cоздать экземпляр переменной платы и петли через доску и создает объект диска для каждого пятна на доске.
      * Yстанавливает начальное состояние платы.
-     * @param board the board to set
+     * @param board
      */
     public void setBoard(Disc[][] board) {
         this.board = board;
     }
     
-    private void initObjects(){
+    private void unitObjects(){
         
         //создать экземпляр переменной платы
         board = new Disc[Constants.ROWS][Constants.COLUMNS];
@@ -502,39 +502,38 @@ public class Board {
         Color currentColor = game.getCurrentPlayer().getDiscColor();
       
         //проверяет, заполнены ли все плитки
+        if((players.get(Constants.PLAYER_1).getScore()+(players.get(Constants.PLAYER_2).getScore())<=64)
+        &&(players.get(Constants.PLAYER_1)).getScore()>0&&(players.get(Constants.PLAYER_2)).getScore()>0){
+            return false;
+        }
+
         for(a=0; a<Constants.ROWS; a++){
             for(b=0; b<Constants.COLUMNS; b++){
                 //если есть еще доступные места для воспроизведения диска, игра будет продолжена
                 if(board[a][b].getDisColoration() == Constants.EMPTY){
                     if(isValidMove(a, b, currentColor, Constants.CHECK_YES)){
-                        return false;
+                        return true;
                     }
                 }
             }
         }
-        
-        
-        //изменяет текущего игрока, а затем проверяет, может ли другой игрок совершать какие-либо действия
         changePlayer();
-        
-        //если он доберется до этого момента, переключите игроков и проверьте, могут ли они сделать ход, если они
-        //не может, тогда игра окончена.
-        // проверяет, заполнены ли все плитки
+        if((players.get(Constants.PLAYER_1).getScore()+(players.get(Constants.PLAYER_2).getScore())==64)
+                &&(players.get(Constants.PLAYER_1)).getScore()>0&&(players.get(Constants.PLAYER_2)).getScore()>0){
+            return false;
+        }
+
         for(a=0; a<Constants.ROWS; a++){
             for(b=0; b<Constants.COLUMNS; b++){
                 //если есть еще доступные места для воспроизведения диска, игра будет продолжена
                 if(board[a][b].getDisColoration() == Constants.EMPTY){
                     if(isValidMove(a, b, currentColor, Constants.CHECK_YES)){
-                        //игра еще не закончена, поэтому теперь мы позволяем другому игроку двигаться
-                        return false;
+                        return true;
                     }
                 }
             }
         }
-        
-        //если мы достигнем этого момента, игра закончится, и мы должны объявить об этом
         JOptionPane.showMessageDialog(null, "No more possible moves for either player. Game over.");
-        //игра заканчивается, если метод достигает этого утверждения.
         return gameOver;
     }
     
